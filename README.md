@@ -34,13 +34,13 @@ Com foco em fundamentos e práticas essenciais do **desenvolvimento web**, o cur
 
 
 
-ifrs-programador-web-2025b/
-├── modulo1-html/
-├── modulo2-css/
-├── modulo3-logica/
-├── modulo4-javascript/
-├── modulo5-banco-de-dados/
-└── projeto-final/
+ifrs-programador-web-2025b/<br>
+├── modulo1-html/<br>
+├── modulo2-css/<br>
+├── modulo3-logica/<br>
+├── modulo4-javascript/<br>
+├── modulo5-banco-de-dados/<br>
+└── projeto-final/<br>
 
 
 📁 Cada pasta conterá exercícios, desafios e projetos desenvolvidos ao longo do curso.

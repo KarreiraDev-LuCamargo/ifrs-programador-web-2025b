@@ -1,0 +1,90 @@
+<head>
+  <!-- Metadados básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO -->
+  <title>Exercíco 1 – Nome e Endereço</title>
+  <meta name="description" content="Exercícios práticos e gabaritos do curso Programador Web – IFRS. Acompanhe seu progresso e pratique seus conhecimentos em HTML, CSS e JavaScript.">
+  <meta name="author" content="Luciano Francisco Camargo">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/favicons/favicon-96x96.png">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="../global.css">
+
+  <!-- Open Graph (para redes sociais como LinkedIn, Facebook, etc.) -->
+  <meta property="og:title" content="Lista de Exercícios Práticos – IFRS">
+  <meta property="og:description" content="Material de apoio com exercícios e respostas para o curso Programador Web do IFRS.">
+  <meta property="og:image" content="../assets/preview.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seusite.com/index.html">
+
+  <!-- Twitter Card (para melhor exibição em compartilhamentos no Twitter/X) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Exercíco 1 – Nome e Endereço">
+  <meta name="twitter:description" content="Pratique seus conhecimentos em programação web com exercícios e gabaritos do IFRS.">
+  <meta name="twitter:image" content="assets/preview.png">
+
+  <!-- Scripts -->
+  <script src="../script.js" defer></script>
+</head>
+
+
+<body>
+  <header class="text-center">
+    <div class="header-content">
+      <h1>Cadastro de Aluno</h1>
+      <p>Curso Programador Web – IFRS</p>
+    </div>
+
+    <!-- Botão de alternância de tema -->
+    <button id="toggleTheme" aria-label="Alternar entre modo claro e escuro" aria-pressed="false" title="Alternar tema">
+      🌙
+    </button>
+  </header>
+
+  <main class="container">
+    <!-- Botão de Retorno -->
+<div class="nav-retorno">
+  <a href="../index.html" class="btn-voltar">← Voltar à Lista de Exercícios</a>
+</div>
+
+    <section aria-labelledby="formularioTitulo">
+      <h2 id="formularioTitulo" class="sr-only">Formulário de Cadastro</h2>
+
+      <form id="cadastroForm" aria-describedby="instrucaoForm">
+        <p id="instrucaoForm" class="sr-only">Preencha os campos abaixo para cadastrar o aluno.</p>
+
+        <div class="form-group">
+          <label for="nome">Nome do aluno:</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite o nome completo" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="idade">Idade do aluno:</label>
+          <input type="number" id="idade" name="idade" placeholder="Ex: 20" min="1" max="120" required>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <!-- Mensagem de sucesso / erro -->
+      <div id="mensagemSucesso" class="mensagem-sucesso oculto" role="alert" aria-live="assertive">
+        <p id="mensagemTexto"></p>
+        <button id="fecharMensagem" type="button" aria-label="Fechar mensagem">OK</button>
+      </div>
+    </section>
+    <br> <button onclick="history.back()"><a style="color: #fff;" href="../index.html">Voltar</a> 👈</button>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2025 Curso Programador Web – IFRS | (Minha versão)  Desenvolvido por
+      <strong>Luciano Francisco Camargo</strong>
+    </p>
+  </footer>
+</body>
+</html>

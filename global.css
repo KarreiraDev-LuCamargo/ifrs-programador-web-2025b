@@ -69,6 +69,30 @@ body {
 /* =========================================
    CABEÇALHO CENTRALIZADO E RESPONSIVO IFRS
    ========================================= */
+header nav a {
+  padding: 6px 14px;
+  margin: 0 4px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+body.light header nav a {
+  color: #004c97;
+}
+
+body.dark header nav a {
+  color: #f0f0f0;
+}
+
+header nav a:hover {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  transform: translateY(-2px);
+}
+
+
 header {
   background-color: var(--cor-principal);
   color: #fff;
@@ -431,30 +455,82 @@ Efeito hover sutil e elegante (leve aumento de escala e mudança de tom).
   cursor: pointer;
 }
 
-/* =========================================
-   GALERIAS DE IMAGENS (AJUSTE GLOBAL)
-   ========================================= */
-.galeria {
+//* ==============================
+   GALERIA — GRID PROFISSIONAL
+=================================*/
+#galeria {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#galeria h2 {
+  margin-bottom: 10px;
+}
+
+#galeria p {
+  margin-bottom: 20px;
+}
+
+.galeria-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-  justify-items: center;
-  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
 }
 
-.galeria img {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* mantém proporção quadrada visualmente */
-  object-fit: cover;
+.galeria-item {
+  position: relative;
+  overflow: hidden;
   border-radius: var(--radius);
+  cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.galeria img:hover {
-  transform: scale(1.05);
+.galeria-item img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius);
+}
+
+.galeria-item span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity .25s ease, transform .25s ease;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+/* HOVER — efeito suave */
+.galeria-item:hover {
+  transform: scale(1.03);
   box-shadow: var(--shadow-md);
+}
+
+.galeria-item:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .galeria-item img {
+    height: 170px;
+  }
+}
+
 }
 
 /* Ajuste responsivo extra */
@@ -463,4 +539,254 @@ Efeito hover sutil e elegante (leve aumento de escala e mudança de tom).
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.8rem;
   }
+}
+
+#sobre {
+  margin-top: 55px;
+  line-height: 1.6;
+  padding: 10px 15px;
+}
+#sobre h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* ==============================
+   FORMULÁRIO CONTATO
+============================== */
+#contato {
+  margin-top: 60px;
+  padding: 10px 15px;
+}
+
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-contato label {
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-contato input,
+.form-contato textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: var(--bg-secondary);
+  color: var(--text-color);
+}
+
+.form-contato button {
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-color, #0077ff);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: opacity .3s;
+}
+
+.form-contato button:hover {
+  opacity: .85;
+}
+
+.voltar-topo {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.voltar-topo a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid var(--primary-color, #0a84ff);
+  transition: 0.3s ease;
+}
+
+body.light .voltar-topo a {
+  color: #0a84ff;
+}
+
+body.dark .voltar-topo a {
+  color: #fff;
+  border-color: #fff;
+}
+
+.voltar-topo a:hover {
+  background: var(--primary-color, #0a84ff);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   🔥 ESTILOS EXTRAS – NAVEGAÇÃO, VOLTAR AO TOPO E GALERIA
+   ============================================================ */
+
+/* ===== NAV MENU MELHORADO ===== */
+header nav a {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color .25s ease, color .25s ease, transform .2s ease;
+}
+
+header nav a:hover {
+  background-color: rgba(255,255,255,0.18);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* DARK MODE NAV */
+body.dark-mode header nav a:hover {
+  background-color: rgba(255,255,255,0.25);
+  color: #d1fae5;
+}
+
+
+/* ===== BOTÃO 'VOLTAR AO TOPO' ===== */
+.voltar-topo {
+  text-align: right;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.voltar-topo a {
+  background-color: var(--cor-principal);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color .25s ease, transform .2s ease;
+}
+
+.voltar-topo a:hover {
+  background-color: var(--cor-hover);
+  transform: translateY(-2px);
+}
+
+/* DARK MODE */
+body.dark-mode .voltar-topo a {
+  background-color: #0d442a;
+}
+body.dark-mode .voltar-topo a:hover {
+  background-color: #166b44;
+}
+
+
+/* ===== HERO (TEXTO PROMOCIONAL) ===== */
+#hero h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--cor-principal);
+}
+
+#hero p {
+  font-size: 1.15rem;
+  color: var(--cor-subtexto);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+body.dark-mode #hero p {
+  color: #eaeaea;
+}
+
+
+/* ============================================================
+   GALERIA GRID PROFISSIONAL
+   ============================================================ */
+.galeria-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1rem;
+}
+
+.galeria-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* Hover elegante */
+.galeria-item:hover img {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+/* LEGENDA MOSTRADA AO PASSAR O MOUSE */
+.galeria-legenda {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border-radius: 0 0 var(--radius) var(--radius);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.galeria-item:hover .galeria-legenda {
+  opacity: 1;
+}
+
+
+/* MODO DARK */
+body.dark-mode .galeria-legenda {
+  background: rgba(255,255,255,0.18);
+}
+
+body.dark-mode .galeria-item img {
+  box-shadow: 0 3px 12px rgba(255,255,255,0.08);
+}
+
+/* ============================================================
+   RESPONSIVIDADE EXTRA
+   ============================================================ */
+@media (max-width: 600px) {
+  .galeria-item img {
+    height: 160px;
+  }
+
+  #hero h2 {
+    font-size: 1.6rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+}
+
+#lista-de-exercicios {
+  max-height: 400px;   /* Ajuste como quiser */
+  overflow-y: auto;    /* Mostra a rolagem vertical */
+  padding-right: 8px;  /* Evita cortar texto */
 }
